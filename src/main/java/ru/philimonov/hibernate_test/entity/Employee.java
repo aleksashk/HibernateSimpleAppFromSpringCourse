@@ -1,4 +1,4 @@
-package ru.philimonov.hibernate_test_entity;
+package ru.philimonov.hibernate_test.entity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
