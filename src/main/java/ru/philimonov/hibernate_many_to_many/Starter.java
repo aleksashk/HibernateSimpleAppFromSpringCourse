@@ -20,17 +20,20 @@ public class Starter {
 //            section.addChildToSection(child2);
 //            section.addChildToSection(child3);
 //************************************************************************************
-            Section section1 = new Section("Volleyball");
-            Section section2 = new Section("Karate");
-            Section section3 = new Section("Hockey");
+//            Section section1 = new Section("Volleyball");
+//            Section section2 = new Section("Karate");
+//            Section section3 = new Section("Hockey");
+//
+//            Child child = new Child("Roma", 9);
+//            child.addSectionToChild(section1);
+//            child.addSectionToChild(section2);
+//            child.addSectionToChild(section3);
 
-            Child child = new Child("Roma", 9);
-            child.addSectionToChild(section1);
-            child.addSectionToChild(section2);
-            child.addSectionToChild(section3);
+            //************************************************************************************
             session.beginTransaction();
-
-            session.save(child);
+            Section section = session.get(Section.class, 5);
+            System.out.println(section);
+            System.out.println(section.getChildren());
 
             session.getTransaction().commit();
             System.out.println("Done!!!");
