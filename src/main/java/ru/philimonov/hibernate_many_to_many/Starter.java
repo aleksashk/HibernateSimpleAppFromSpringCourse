@@ -9,6 +9,8 @@ import ru.philimonov.hibernate_many_to_many.entity.Section;
 public class Starter {
     public static void main(String[] args) {
         try (SessionFactory factory = new Configuration().configure("hibernate.cfg.xml").addAnnotatedClass(Child.class).addAnnotatedClass(Section.class).buildSessionFactory(); Session session = factory.getCurrentSession()) {
+            session.beginTransaction();
+
 
 //            Section section = new Section("Footbal");
 //
@@ -30,14 +32,19 @@ public class Starter {
 //            child.addSectionToChild(section3);
 
             //************************************************************************************
-            session.beginTransaction();
 //            Section section = session.get(Section.class, 5);
 //            System.out.println(section);
 //            System.out.println(section.getChildren());
+            //************************************************************************************
 
-            Child child = session.get(Child.class, 7);
-            System.out.println(child);
-            System.out.println(child.getSections());
+//            Child child = session.get(Child.class, 7);
+//            System.out.println(child);
+//            System.out.println(child.getSections());
+
+            //************************************************************************************
+
+            Section section = session.get(Section.class, 2);
+            session.delete(section);
             session.getTransaction().commit();
             System.out.println("Done!!!");
         }
