@@ -15,7 +15,8 @@ public class Starter3 {
             session.beginTransaction();
 
 //            List<Employee> emps= session.createQuery("from Employee ").getResultList();
-            List<Employee> emps= session.createQuery("from Employee where name = 'Boris'").getResultList();
+//            List<Employee> emps= session.createQuery("from Employee where name = 'Boris'").getResultList();
+            List<Employee> emps= session.createQuery("from Employee where name = 'Boris' and salary > 3000").getResultList();
 
             for (Employee emp : emps) {
                 System.out.println(emp);
