@@ -24,9 +24,10 @@ public class Starter {
 
             session.beginTransaction();
 
-            Department department = session.get(Department.class, 1);
-            System.out.println(department);
-            System.out.println(department.getEmps());
+            Employee employee = session.get(Employee.class, 1);
+            System.out.println(employee);
+            System.out.println(employee.getDepartment());
+
             session.getTransaction().commit();
             System.out.println("Done!");
         }
