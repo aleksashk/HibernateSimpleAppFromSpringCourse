@@ -20,7 +20,7 @@ public class Starter {
             Session session = factory.getCurrentSession();
             session.beginTransaction();
 
-            Employee employee = session.get(Employee.class, 1);
+            Employee employee = session.get(Employee.class, 10);
             System.out.println(employee.getEmpDetail());
 
             session.getTransaction().commit();
