@@ -25,8 +25,7 @@ public class Starter {
             session.beginTransaction();
 
             Employee employee = session.get(Employee.class, 1);
-            System.out.println(employee);
-            System.out.println(employee.getDepartment());
+            session.delete(employee);
 
             session.getTransaction().commit();
             System.out.println("Done!");
