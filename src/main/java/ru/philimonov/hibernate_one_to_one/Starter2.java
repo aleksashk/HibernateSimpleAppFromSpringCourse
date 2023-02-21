@@ -12,8 +12,8 @@ public class Starter2 {
         Session session = factory.getCurrentSession();
 
         try (factory; session) {
-            Employee employee = new Employee("Aleksandr", "Philimonov", "IT", 500);
-            Detail detail = new Detail("Minsk", "456-852-951", "flameksandr@gmail.com");
+            Employee employee = new Employee("Jorge", "Cluni", "HR", 700);
+            Detail detail = new Detail("New York", "147-369-004", "clunca@gmail.com");
             employee.setEmpDetail(detail);
             detail.setEmployee(employee);
             session.beginTransaction();
