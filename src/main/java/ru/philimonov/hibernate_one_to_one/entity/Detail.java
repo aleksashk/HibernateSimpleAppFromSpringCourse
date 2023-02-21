@@ -9,7 +9,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "details")
-public class Details {
+public class Detail {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -25,10 +25,10 @@ public class Details {
     @Column(name = "email")
     private String email;
 
-    public Details() {
+    public Detail() {
     }
 
-    public Details(String city, String phoneNumber, String email) {
+    public Detail(String city, String phoneNumber, String email) {
         this.city = city;
         this.phoneNumber = phoneNumber;
         this.email = email;
@@ -68,7 +68,7 @@ public class Details {
 
     @Override
     public String toString() {
-        return "Details{" +
+        return "Detail{" +
                 "id=" + id +
                 ", city='" + city + '\'' +
                 ", phoneNumber='" + phoneNumber + '\'' +
