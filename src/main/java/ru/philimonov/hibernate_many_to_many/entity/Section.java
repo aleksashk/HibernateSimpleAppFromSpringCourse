@@ -69,4 +69,12 @@ public class Section {
     public void setChildren(List<Child> children) {
         this.children = children;
     }
+
+    @Override
+    public String toString() {
+        return "Section{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                '}';
+    }
 }
