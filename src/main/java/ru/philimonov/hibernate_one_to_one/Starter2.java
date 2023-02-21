@@ -13,7 +13,8 @@ public class Starter2 {
 
         try (factory; session) {
             session.beginTransaction();
-            Detail detail = session.get(Detail.class, 4);
+            Detail detail = session.get(Detail.class, 2);
+            detail.getEmployee().setEmpDetail(null);
             session.delete(detail);
 
             session.getTransaction().commit();
