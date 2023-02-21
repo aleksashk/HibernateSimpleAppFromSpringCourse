@@ -18,11 +18,17 @@ public class Starter {
             Child child2 = new Child("Lena", 6);
             Child child3 = new Child("Dasha", 4);
 
+
+            session.save(section);
+
             section.addChildToSection(child1);
             section.addChildToSection(child2);
             section.addChildToSection(child3);
 
-            session.save(section);
+
+            session.save(child1);
+            session.save(child2);
+            session.save(child3);
 //************************************************************************************
 //            Section section1 = new Section("Volleyball");
 //            Section section2 = new Section("Karate");
