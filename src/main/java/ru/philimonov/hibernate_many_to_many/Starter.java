@@ -12,15 +12,17 @@ public class Starter {
             session.beginTransaction();
 
 
-//            Section section = new Section("Footbal");
-//
-//            Child child1 = new Child("Aleks", 5);
-//            Child child2 = new Child("Lena", 6);
-//            Child child3 = new Child("Dasha", 4);
-//
-//            section.addChildToSection(child1);
-//            section.addChildToSection(child2);
-//            section.addChildToSection(child3);
+            Section section = new Section("Footbal");
+
+            Child child1 = new Child("Aleks", 5);
+            Child child2 = new Child("Lena", 6);
+            Child child3 = new Child("Dasha", 4);
+
+            section.addChildToSection(child1);
+            section.addChildToSection(child2);
+            section.addChildToSection(child3);
+
+            session.save(section);
 //************************************************************************************
 //            Section section1 = new Section("Volleyball");
 //            Section section2 = new Section("Karate");
@@ -43,8 +45,8 @@ public class Starter {
 
             //************************************************************************************
 
-            Section section = session.get(Section.class, 2);
-            session.delete(section);
+//            Section section = session.get(Section.class, 2);
+//            session.delete(section);
             session.getTransaction().commit();
             System.out.println("Done!!!");
         }

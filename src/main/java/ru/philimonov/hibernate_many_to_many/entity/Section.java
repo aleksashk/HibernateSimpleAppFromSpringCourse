@@ -31,7 +31,7 @@ public class Section {
         this.name = name;
     }
 
-    @ManyToMany(cascade = CascadeType.ALL)
+    @ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REFRESH, CascadeType.DETACH})
     @JoinTable(
             name = "children_section",
             joinColumns = @JoinColumn(name = "section_id"),
