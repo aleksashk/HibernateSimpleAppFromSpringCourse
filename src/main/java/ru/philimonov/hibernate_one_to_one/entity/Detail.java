@@ -81,7 +81,7 @@ public class Detail {
 
     @Override
     public String toString() {
-        return "Detail{" +
+        return "Department{" +
                 "id=" + id +
                 ", city='" + city + '\'' +
                 ", phoneNumber='" + phoneNumber + '\'' +
