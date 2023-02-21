@@ -12,8 +12,10 @@ public class Starter5 {
             Session session = sessionFactory.getCurrentSession();
             session.beginTransaction();
 
-            Employee employee = session.get(Employee.class, 1);
-            session.delete(employee);
+//            Employee employee = session.get(Employee.class, 1);
+//            session.delete(employee);
+
+            session.createQuery("delete Employee where name='Boris'").executeUpdate();
 
             session.getTransaction().commit();
             System.out.println("Done!");
