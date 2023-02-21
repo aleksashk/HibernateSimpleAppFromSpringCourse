@@ -12,10 +12,12 @@ public class Starter1 {
         try {
             Session session = sessionFactory.getCurrentSession();
 
-            Employee employee = new Employee("Grigory", "Pal", "HR", 4500);
+            Employee employee = new Employee("Rachel", "Hil", "HR", 4200);
             session.beginTransaction();
             session.save(employee);
             session.getTransaction().commit();
+            System.out.println("Done!");
+            System.out.println("employee.getId()" + employee.getId());
         } finally {
             sessionFactory.close();
         }
