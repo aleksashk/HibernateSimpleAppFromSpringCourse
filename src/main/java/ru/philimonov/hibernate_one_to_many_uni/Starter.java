@@ -23,8 +23,11 @@ public class Starter {
 //            session.save(department);
 //***************************************************************
             session.beginTransaction();
-            Employee employee = session.get(Employee.class, 3);
-            session.delete(employee);
+            Department department = session.get(Department.class, 2);
+            session.delete(department);
+//******************************************************************
+//            Employee employee = session.get(Employee.class, 3);
+//            session.delete(employee);
 //***************************************************************
 //            session.beginTransaction();
 //            Department department = session.get(Department.class, 2);
