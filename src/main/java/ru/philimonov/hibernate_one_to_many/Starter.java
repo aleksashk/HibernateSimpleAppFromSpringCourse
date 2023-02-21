@@ -12,18 +12,19 @@ public class Starter {
         Session session = factory.getCurrentSession();
 
         try (factory; session) {
-            Department department = new Department("IT", 300, 1200);
-            Employee employee1 = new Employee("Aleksandr", "Philimonov", 1100);
-            Employee employee2 = new Employee("Heleonora", "Smith", 800);
+//            Department department = new Department("IT", 300, 1200);
+//            Employee employee1 = new Employee("Aleksandr", "Philimonov", 1100);
+//            Employee employee2 = new Employee("Heleonora", "Smith", 800);
+//
+//            department.addEmployeeToDepartment(employee1);
+//            department.addEmployeeToDepartment(employee2);
+//            session.beginTransaction();
+//
+//            session.save(department);
 
-            department.addEmployeeToDepartment(employee1);
-            department.addEmployeeToDepartment(employee2);
             session.beginTransaction();
-
-            session.save(department);
-
-//            Employee employee = session.get(Employee.class, 1);
-//            session.delete(employee);
+            Employee employee = session.get(Employee.class, 4);
+            session.delete(employee);
 
             session.getTransaction().commit();
             System.out.println("Done!");
