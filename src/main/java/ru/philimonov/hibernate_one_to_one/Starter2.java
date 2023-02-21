@@ -12,13 +12,9 @@ public class Starter2 {
         Session session = factory.getCurrentSession();
 
         try (factory; session) {
-            Employee employee = new Employee("Jorge", "Cluni", "HR", 700);
-            Detail detail = new Detail("New York", "147-369-004", "clunca@gmail.com");
-            employee.setEmpDetail(detail);
-            detail.setEmployee(employee);
             session.beginTransaction();
-
-            session.save(employee);
+            Detail detail = session.get(Detail.class, 4);
+            System.out.println(detail.getEmployee());
 
             session.getTransaction().commit();
             System.out.println("Done!");
