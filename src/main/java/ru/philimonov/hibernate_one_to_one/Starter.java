@@ -8,19 +8,14 @@ import ru.philimonov.hibernate_one_to_one.entity.Employee;
 
 public class Starter {
     public static void main(String[] args) {
-        try(SessionFactory factory = new Configuration().configure("hibernate.cfg.xml").addAnnotatedClass(Employee.class).addAnnotatedClass(Detail.class).buildSessionFactory()){
-//            Employee employee = new Employee("Boris", "Jonson", "HR", 300);
-//            Detail detail = new Detail("London", "025-54-89", "jonson@gmail.com");
-//            employee.setEmpDetail(detail);
-//            Session session = factory.getCurrentSession();
-//            session.beginTransaction();
-//
-//            session.save(employee);
+        SessionFactory factory = new Configuration().configure("hibernate.cfg.xml").addAnnotatedClass(Employee.class).addAnnotatedClass(Detail.class).buildSessionFactory();
+        Session session = factory.getCurrentSession();
 
-            Session session = factory.getCurrentSession();
+        try(factory;session){
             session.beginTransaction();
 
-            Employee employee = session.get(Employee.class, 10);
+            Employee employee = session.get(Employee.class, 1);
+            session.delete(employee);
             System.out.println(employee.getEmpDetail());
 
             session.getTransaction().commit();
